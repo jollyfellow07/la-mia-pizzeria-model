@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PizzeriaCompagnone.Models;
+using PizzeriaCompagnone.Utils;
 
 namespace PizzeriaCompagnone.Controllers
 {
@@ -7,7 +9,8 @@ namespace PizzeriaCompagnone.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View("HomePage");
+            List<Pizza> pizzas = DbPizza.GetPizzas();
+            return View("HomePage", pizzas);
         }
     }
 }

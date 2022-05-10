@@ -4,9 +4,9 @@ namespace PizzeriaCompagnone.Utils
 {
     public static class DbPizza
     {
-        private static List<Pizza> pizzas;
+        public static List<Pizza> pizzas;
 
-        private static List<Pizza> GetPizzas()
+        public static List<Pizza> GetPizzas()
         {
             if (DbPizza.pizzas != null)
             {
