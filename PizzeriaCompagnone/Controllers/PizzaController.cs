@@ -12,5 +12,11 @@ namespace PizzeriaCompagnone.Controllers
             List<Pizza> pizzas = DbPizza.GetPizzas();
             return View("HomePage", pizzas);
         }
+        [HttpGet]
+        public IActionResult Dettagli()
+        {
+            List<Pizza> pizzas = DbPizza.GetPizzas();
+            return View("Dettagli", pizzas);
+        }
     }
 }
