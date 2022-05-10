@@ -37,9 +37,9 @@
                                   <p class="text-warning p-0 m-0 fs-6" >ATTENZIONE: PIZZA CON GLUTINE </p>
                                   <p class="p-4"> <b>@menu.prezzo €</b></p>
                                   <p>
-                                      <button type="button" class="btn btn-warning">Acquista</button>
+                                      <a type="button" class="btn btn-warning">Acquista</a>
                                       <span>     </span>
-                                      <button type="button" href=@Url.Action("Dettagli", "Pizza", new {id = menu.id})  class="btn btn-warning">Dettagli</button>
+                                      <a type="button" href="/Pizza/dettagli/@menu.id"  class="btn btn-warning">Dettagli</a>
                                   </p>
                                 </div>
                           </div>

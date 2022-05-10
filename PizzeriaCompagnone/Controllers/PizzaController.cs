@@ -13,10 +13,27 @@ namespace PizzeriaCompagnone.Controllers
             return View("HomePage", pizzas);
         }
         [HttpGet]
-        public IActionResult Dettagli()
+        public IActionResult Dettagli(int id)
         {
-            List<Pizza> pizzas = DbPizza.GetPizzas();
-            return View("Dettagli", pizzas);
+            Pizza pizzaTrovata = null;
+            foreach (Pizza pizza in DbPizza.GetPizzas())
+            {
+                if (pizza.id == id)
+                {
+                    pizzaTrovata = pizza;
+                        break;
+                }
+            }
+            if (pizzaTrovata != null)
+            {
+                return View("Dettagli", pizzaTrovata);
+            }
+            else
+            {
+               return NotFound("il post con id " + id + " non è stato trovato!");
+            }
+        
+
         }
     }
 }
